@@ -10,6 +10,7 @@ codenameApp.controller('BulletinController', function GameController($scope, $ht
             "title": "Time to pray together"
         }
     ];
+    $scope.new = {};
 
     $scope.refresh = function () {
         $http({
@@ -22,6 +23,21 @@ codenameApp.controller('BulletinController', function GameController($scope, $ht
             // or server returns response with an error status.
         });
     };
+
+    $scope.add = function () {
+        $scope.new.id = Date.now().toString();
+        $http({
+            method: 'POST',
+            url: 'https://hx0wfex80e.execute-api.ap-southeast-2.amazonaws.com/prod/GETannouncements',
+            data: $scope.new
+        }).then(function successCallback(response) {
+            $scope.announcements.push($scope.new);
+            $scope.new = {};
+        }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        });
+    }
 
     $scope.refresh();
 
