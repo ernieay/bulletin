@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="bulletinApp">
+<html lang="en">
 
   <head>
 
@@ -8,9 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>EFCA Church Bulletin</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.min.js"></script>
-    <script src="app.js"></script>
+    <title>EDIT - EFCA Church Bulletin</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,11 +25,11 @@
 
   </head>
 
-  <body id="page-top" ng-controller="BulletinController">
+  <body id="page-top">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none">EFCA</span>
+        <span class="d-block d-lg-none">Edit Mode</span>
         <span class="d-none d-lg-block">
           <!-- <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt=""> -->
         </span>
@@ -115,14 +113,50 @@
         <div class="my-auto">
           <h2 class="mb-5">Announcements</h2>
 
-          <div class="resume-item d-flex flex-column flex-md-row mb-5" ng-repeat="ann in announcements">
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">{{ann.title}}</h3>
-              <div class="subheading mb-3">{{ann.info}}</div>
-              <p>{{ann.details}}</p>
+              <h3 class="mb-0">Investigating Christianity</h3>
+              <div class="subheading mb-3">Contact Dave on 0405 362 073 or email david.chen@efca.org.au</div>
+              <p>Welcome to church! If you would like to find out more about Christianity, we would love to meet up to read the Bbile or answer any questions.</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary"><button>Delete</button></span>
+            </div>
+          </div>        
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Time to pray together</h3>
+              <div class="subheading mb-3">4pm Gordon Library Meeting Room</div>
+              <p>Remember each Sunday at 4pm to come together to pray for the work of the gospel here and abroad.</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary"><button>Delete</button></span>
             </div>
           </div>
-          
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Community Christmas Carols and Fete event</h3>
+              <div class="subheading mb-3">Sunday 3rd Dec 4pm-7:30pm</div>
+              <p>Sunday 3rd Dec. Come along and bring your friends, family, neighbours, colleagues and camels along to celebrate the joy of Christmas. Pray that your unbelieving friends would come along. Starts at 4pm, Carols at 6pm-7.30pm. We will be combining our service to 11am on this day, and therefore no 5pm</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary"><button>Delete</button></span>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Title</h3><input></input>
+              <div class="subheading mb-3">KeyInfo</div><input></input>
+              <p>Details</p><input></input>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary"><button>Add</button></span>
+            </div>
+          </div>
+
         </div>
 
       </section>
