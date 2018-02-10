@@ -39,6 +39,19 @@ codenameApp.controller('BulletinController', function GameController($scope, $ht
         });
     }
 
+    $scope.delete = function (id) {
+        
+        $http({
+            method: 'DELETE',
+            url: 'https://hx0wfex80e.execute-api.ap-southeast-2.amazonaws.com/prod/GETannouncements?id=' + id
+        }).then(function successCallback(response) {
+            $scope.announcements = $scope.announcements.filter(announcement => announcement.id !== id);
+        }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        });
+    }
+
     $scope.refresh();
 
 });
