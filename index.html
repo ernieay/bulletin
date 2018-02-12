@@ -1,166 +1,226 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="bulletinApp">
 
-  <head>
+<head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>EFCA Church Bulletin</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.min.js"></script>
-    <script src="app.js"></script>
+  <title>EFCA Church Bulletin</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.min.js"></script>
+  <script src="app.js"></script>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom fonts for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
-    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="css/resume.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/resume.min.css" rel="stylesheet">
 
-  </head>
+</head>
 
-  <body id="page-top" ng-controller="BulletinController">
+<body id="page-top" ng-controller="BulletinController">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none">EFCA</span>
-        <span class="d-none d-lg-block">
-          <!-- <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt=""> -->
-        </span>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#welcome">Welcome</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-block d-lg-none">EFCA</span>
+      <span class="d-none d-lg-block">
+        <!-- <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt=""> -->
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#welcome">Welcome</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#services">Sunday Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#announcements">Announcements</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#pastors">Pastoral Team</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact Us</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Sunday Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#announcements">Announcements</a>
-          </li>
-          <!-- 
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#awards">Awards</a> -->
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid p-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="welcome">
+      <div class="my-auto">
+        <h1 class="mb-0">EFC
+          <span class="text-primary">at 5</span>
+        </h1>
+        <div class="subheading mb-5">Gordon Library Meeting Room 1 · Sunday · 5pm </div>
+        <p class="mb-5">We'd like to warmly welcome you today to our service, especially if you are here for the first time. Our mission
+          at EFCA is to build and equip each other to be passionate disciples of Jesus, so that we can impact the world for
+          Him to the glory of God. We are glad that you are here!</p>
+
+      </div>
+    </section>
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="services">
+      <div class="my-auto">
+        <h2 class="mb-5">Sunday Services</h2>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">SWITCH - Youth Service</h3>
+            <div>28-30 Wellington Road East Lindfield</div>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">9 am</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">English Morning Service</h3>
+            <div>28-30 Wellington Road, East Lindfield</div>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">11 am</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">English Evening Service</h3>
+            <div>Gordon Library Meeting Room 1</div>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">5 pm</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">Mandarin Service</h3>
+            <div>Chatswood Public School</div>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">9 am</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">Cantonese Service</h3>
+            <div>Zenith Theatre, Chatswood</div>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">9 am · 11:15 am</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">Cantonese Service</h3>
+            <div>Chatswood Church of Christ</div>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">11:45 am</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="announcements">
+      <div class="my-auto">
+        <h2 class="mb-5">Announcements</h2>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5" ng-repeat="ann in announcements">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">{{ann.title}}</h3>
+            <div class="subheading mb-3">{{ann.info}}</div>
+            <p>{{ann.details}}</p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="pastors">
+      <div class="my-auto">
+        <h2 class="mb-5">Pastoral Team</h2>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">English</h3>
+            <div class="subheading mb-3">Rev David Chen</div>
+            <div>0405 362 073</div>
+            <a href="mailto:david.chen@efca.org.au">david.chen@efca.org.au</a>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">Youth</h3>
+            <div class="subheading mb-3">Pastor Steve Ryman</div>
+            <div>0424 822 263</div>
+            <a href="mailto:steve.ryman@efca.org.au">steve.ryman@efca.org.au</a>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">Cantonese and Mandarin</h3>
+            <div>Rev Bob Lee</div>
+            <div>Pastor Florence Fung</div>
+            <div>Pastor Richie Kwong</div>
+            <div>Pastor Deborah Hung</div>
+            <div>Pastor Steve Dong Li</div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="contact">
+      <div class="my-auto">
+        <h2 class="mb-5">Contact Us</h2>
+        <p>28-30 Wellington Road, East Lindfield 2070 </p>
+        <p>9415 6044</p>
+        <p>
+          <a href="www.efcaenglish.org">www.efcaenglish.org</a>
+        </p>
+        <p>
+          <a href="switch.efcaenglish.org">switch.efcaenglish.org</a>
+        </p>
+        <ul class="list-inline list-social-icons mb-0">
+          <li class="list-inline-item">
+            <a href="https://www.facebook.com/efca.at.5/">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
           </li>
         </ul>
       </div>
-    </nav>
-
-    <div class="container-fluid p-0">
-
-      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="welcome">
-        <div class="my-auto">
-          <h1 class="mb-0">EFC
-            <span class="text-primary">at 5</span>
-          </h1>
-          <div class="subheading mb-5">Gordon Library Meeting Room 1 · Sunday · 5pm </div>
-          <p class="mb-5">We'd like to warmly welcome you today to our service, especially if you are here for the first time. Our mission at EFCA is to build and equip each other to be passionate disciples of Jesus, so that we can impact the world for Him to the glory of God. We are glad that you are here!</p>
-          
-        </div>
-      </section>
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="services">
-        <div class="my-auto">
-          <h2 class="mb-5">Sunday Services</h2>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">SWITCH - Youth Service</h3>
-              <div>28-30 Wellington Road East Lindfield</div>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">9 am</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">English Morning Service</h3>
-              <div>28-30 Wellington Road, East Lindfield</div>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">11 am</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">English Evening Service</h3>
-              <div>Gordon Library Meeting Room 1</div>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">5 pm</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Mandarin Service</h3>
-              <div>Chatswood Public School</div>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">9 am</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Cantonese Service</h3>
-              <div>Zenith Theatre, Chatswood</div>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">9 am · 11:15 am</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Cantonese Service</h3>
-              <div>Chatswood Church of Christ</div>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">11:45 am</span>
-            </div>
-          </div>
-    
-        </div>
-      </section>
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="announcements">
-        <div class="my-auto">
-          <h2 class="mb-5">Announcements</h2>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5" ng-repeat="ann in announcements">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">{{ann.title}}</h3>
-              <div class="subheading mb-3">{{ann.info}}</div>
-              <p>{{ann.details}}</p>
-            </div>
-          </div>
-          
-        </div>
-
-      </section>
-
-<!-- 
+    </section>
+    <!-- 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
         <div class="my-auto">
           <h2 class="mb-5">Skills</h2>
@@ -263,18 +323,18 @@
         </div>
       </section> -->
 
-    </div>
+  </div>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for this template -->
-    <script src="js/resume.min.js"></script>
+  <!-- Custom scripts for this template -->
+  <script src="js/resume.min.js"></script>
 
-  </body>
+</body>
 
 </html>
