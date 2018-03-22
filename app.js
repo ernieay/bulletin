@@ -10,6 +10,7 @@ codenameApp.controller('BulletinController', function GameController($scope, $ht
             "title": "Time to pray together"
         }
     ];
+    $scope.schedule = {};
     $scope.new = {};
 
     $scope.refresh = function () {
@@ -18,6 +19,16 @@ codenameApp.controller('BulletinController', function GameController($scope, $ht
             url: 'https://hx0wfex80e.execute-api.ap-southeast-2.amazonaws.com/prod/GETannouncements'
         }).then(function successCallback(response) {
             $scope.announcements = response.data.body;
+        }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        });
+
+        $http({
+            method: 'GET',
+            url: 'https://hx0wfex80e.execute-api.ap-southeast-2.amazonaws.com/prod/schedule'
+        }).then(function successCallback(response) {
+            $scope.schedule = response.data.body;
         }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.
@@ -33,6 +44,20 @@ codenameApp.controller('BulletinController', function GameController($scope, $ht
         }).then(function successCallback(response) {
             $scope.announcements.push($scope.new);
             $scope.new = {};
+        }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        });
+    }
+
+    $scope.updateSchedule = function () {
+        $scope.schedule.id = "1";
+        $http({
+            method: 'PUT',
+            url: 'https://hx0wfex80e.execute-api.ap-southeast-2.amazonaws.com/prod/schedule',
+            data: $scope.schedule
+        }).then(function successCallback(response) {
+
         }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.
