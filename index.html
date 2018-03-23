@@ -49,6 +49,9 @@
           <a class="nav-link js-scroll-trigger" href="#services">Sunday Services</a>
         </li>
         <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#questions">Questions?</a>
+          </li>
+        <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#announcements">Announcements</a>
         </li>
         <li class="nav-item">
@@ -146,6 +149,21 @@
           </div>
         </div>
 
+      </div>
+    </section>
+
+    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="questions">
+      <div class="my-auto">
+        <h2 class="mb-5">Questions</h2>
+        <p class="mb-5">If you have any questions, you can submit them 
+          here. During Q&amp;A time the MC will submit questions anonymously to the speaker.</p>
+        <textarea ng-hide="sent" cols="30" rows="5" ng-model="question.text"></textarea>
+        <p class="mb-5" ng-show="sent">I hide the send button after submitting to avoid spam. If you want to ask another question, refresh the page.</p>
+        <div class="resume-date text-md-right">
+            <span class="text-primary">
+              <button ng-click="sendQuestion()" ng-hide="sent">Send</button>
+            </span>
+        </div>
       </div>
     </section>
 

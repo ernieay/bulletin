@@ -19,7 +19,9 @@ codenameApp.controller('BulletinController', function GameController($scope, $ht
     ]
     $scope.series = ['Target to date', 'Actual to date'];
     $scope.data = [[0,0], [0,0]];
-
+    $scope.question = {text : ""};
+    $scope.sent = false;
+    $scope.mcQuestions = [];
 
     $scope.refresh = function () {
         $http({
@@ -27,6 +29,16 @@ codenameApp.controller('BulletinController', function GameController($scope, $ht
             url: 'https://hx0wfex80e.execute-api.ap-southeast-2.amazonaws.com/prod/GETannouncements'
         }).then(function successCallback(response) {
             $scope.announcements = response.data.body;
+        }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        });
+
+        $http({
+            method: 'GET',
+            url: 'https://hx0wfex80e.execute-api.ap-southeast-2.amazonaws.com/prod/questions'
+        }).then(function successCallback(response) {
+            $scope.mcQuestions = response.data.body;
         }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.
@@ -93,20 +105,33 @@ codenameApp.controller('BulletinController', function GameController($scope, $ht
             url: 'https://hx0wfex80e.execute-api.ap-southeast-2.amazonaws.com/prod/statistics',
             data: $scope.stats
         }).then(function successCallback(response) {
-
+            
         }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.
         });
     }
 
-    $scope.delete = function (id) {
-        
+    $scope.delete = function (id) {        
         $http({
             method: 'DELETE',
             url: 'https://hx0wfex80e.execute-api.ap-southeast-2.amazonaws.com/prod/GETannouncements?id=' + id
         }).then(function successCallback(response) {
             $scope.announcements = $scope.announcements.filter(announcement => announcement.id !== id);
+        }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        });
+    }
+
+    $scope.sendQuestion = function () {
+       
+        $http({
+            method: 'POST',
+            url: 'https://hx0wfex80e.execute-api.ap-southeast-2.amazonaws.com/prod/questions',
+            data: $scope.question
+        }).then(function successCallback(response) {
+            $scope.sent = true;
         }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.
