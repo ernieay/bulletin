@@ -86,6 +86,20 @@ codenameApp.controller('BulletinController', function GameController($scope, $ht
         });
     }
 
+    $scope.updateStats = function () {
+        $scope.stats.id = "1";
+        $http({
+            method: 'PUT',
+            url: 'https://hx0wfex80e.execute-api.ap-southeast-2.amazonaws.com/prod/statistics',
+            data: $scope.stats
+        }).then(function successCallback(response) {
+
+        }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        });
+    }
+
     $scope.delete = function (id) {
         
         $http({

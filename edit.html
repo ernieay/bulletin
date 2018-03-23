@@ -50,6 +50,10 @@
             <a class="nav-link js-scroll-trigger" href="#schedule">Schedule</a>
           </li>
 
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#statistics">Statistics</a>
+          </li>
+
           </li>
         </ul>
       </div>
@@ -116,6 +120,54 @@
 
       </section>
 
+      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="statistics">
+        <div class="my-auto">
+          <h2 class="mb-5">Statistics</h2>
+          <h3 class="mb-0">Last Week</h3>
+          <div class="subheading mb-3">Attendance</div>
+          <table  cellpadding="5">
+            <tbody>
+            <tr>
+            <td>SWITCH</td>
+            <td>11am English</td>
+            <td>5pm English</td>
+            <td>Cantonese</td>
+            <td>Mandarin</td>
+            </tr>
+            <tr>
+            <td><input ng-model="stats.switch"></input></td>
+            <td><input ng-model="stats.morning"></input></td>
+            <td><input ng-model="stats.evening"></input></td>
+            <td><input ng-model="stats.canto"></input></td>
+            <td><input ng-model="stats.mando"></input></td>
+            </tr>
+            </tbody>
+          </table>
+  
+          <div class="subheading mb-3">Giving</div>
+          <table  cellpadding="5">
+            <tbody>
+            <tr>
+            <td>GF Target</td>
+            <td>GF Actual</td>
+            <td>MF Target</td>
+            <td>MF Actual</td>
+            </tr>
+            <tr>
+            <td><input ng-model="stats.gftarget"></input></td>
+            <td><input ng-model="stats.gfactual"></input></td>
+            <td><input ng-model="stats.mftarget"></input></td>
+            <td><input ng-model="stats.mfactual"></input></td>
+            </tr>
+            </tbody>
+          </table>
+
+          <div class="resume-date text-md-right">
+            <span class="text-primary"><button ng-click="updateStats()">Update</button></span>
+          </div>
+        </div>        
+      </section>    
+
 
     </div>
 
@@ -128,6 +180,8 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/resume.min.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <script src="js/angular-chart.min.js"></script>
 
   </body>
 
