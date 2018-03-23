@@ -1,4 +1,4 @@
-var codenameApp = angular.module('bulletinApp', []);
+var codenameApp = angular.module('bulletinApp', ['chart.js']);
 
 codenameApp.controller('BulletinController', function GameController($scope, $http, $interval) {
 
@@ -11,7 +11,15 @@ codenameApp.controller('BulletinController', function GameController($scope, $ht
         }
     ];
     $scope.schedule = {};
+    $scope.stats = {};
     $scope.new = {};
+    $scope.labels = [
+        'General Fund',
+        'Mission Fund'
+    ]
+    $scope.series = ['Target to date', 'Actual to date'];
+    $scope.data = [[0,0], [0,0]];
+
 
     $scope.refresh = function () {
         $http({
@@ -29,6 +37,20 @@ codenameApp.controller('BulletinController', function GameController($scope, $ht
             url: 'https://hx0wfex80e.execute-api.ap-southeast-2.amazonaws.com/prod/schedule'
         }).then(function successCallback(response) {
             $scope.schedule = response.data.body;
+        }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        });
+
+        $http({
+            method: 'GET',
+            url: 'https://hx0wfex80e.execute-api.ap-southeast-2.amazonaws.com/prod/statistics'
+        }).then(function successCallback(response) {
+            $scope.stats = response.data.body;
+            $scope.data[0][0] = $scope.stats.gftarget;
+            $scope.data[0][1] = $scope.stats.mftarget;
+            $scope.data[1][0] = $scope.stats.gfactual;
+            $scope.data[1][1] = $scope.stats.mfactual;
         }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.
