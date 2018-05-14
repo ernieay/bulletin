@@ -49,9 +49,6 @@
           <a class="nav-link js-scroll-trigger" href="#services">Sunday Services</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#questions">Questions?</a>
-          </li>
-        <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#announcements">Announcements</a>
         </li>
         <li class="nav-item">
@@ -72,9 +69,9 @@
     <section class="resume-section p-3 p-lg-5 d-flex d-column" id="welcome">
       <div class="my-auto">
         <h1 class="mb-0">EFC
-          <span class="text-primary">at 5</span>
+          <span class="text-primary">morning service</span>
         </h1>
-        <div class="subheading mb-5">Gordon Library Meeting Room 1 · Sunday · 5pm </div>
+        <div class="subheading mb-5">28-30 Wellington Road, East Lindfield · Sunday · 11am </div>
         <p class="mb-5">We'd like to warmly welcome you today to our service, especially if you are here for the first time. Our mission
           at EFCA is to build and equip each other to be passionate disciples of Jesus, so that we can impact the world for
           Him to the glory of God. We are glad that you are here!</p>
@@ -149,21 +146,6 @@
       </div>
     </section>
 
-    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="questions">
-      <div class="my-auto">
-        <h2 class="mb-5">Questions</h2>
-        <p class="mb-5">If you have any questions, you can submit them 
-          here. During Q&amp;A time the MC will submit questions anonymously to the speaker.</p>
-        <textarea ng-hide="sent" cols="30" rows="5" ng-model="question.text"></textarea>
-        <p class="mb-5" ng-show="sent">I hide the send button after submitting to avoid spam. If you want to ask another question, refresh the page.</p>
-        <div class="resume-date text-md-right">
-            <span class="text-primary">
-              <button ng-click="sendQuestion()" ng-hide="sent">Send</button>
-            </span>
-        </div>
-      </div>
-    </section>
-
     <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="announcements">
       <div class="my-auto">
         <h2 class="mb-5">Announcements</h2>
@@ -187,22 +169,22 @@
         <div class="resume-item d-flex flex-column flex-md-row mb-5">
           <div class="resume-content mr-auto">
             <h3 class="mb-0">Chairing</h3>
-            <div>{{schedule.five.mc}}</div>
+            <div>{{schedule.eleven.mc}}</div>
           </div>
         </div>
 
         <div class="resume-item d-flex flex-column flex-md-row mb-5">
           <div class="resume-content mr-auto">
             <h3 class="mb-0">Bible Reading</h3>
-            <div>{{schedule.five.bibleReader}}</div>
-            <div>{{schedule.five.biblePassage}}</div>
+            <div>{{schedule.eleven.bibleReader}}</div>
+            <div>{{schedule.eleven.biblePassage}}</div>
           </div>
         </div>
 
         <div class="resume-item d-flex flex-column flex-md-row mb-5">
           <div class="resume-content mr-auto">
             <h3 class="mb-0">Ushers</h3>
-            <div ng-repeat="usher in schedule.five.Ushers">{{usher}}</div>
+            <div ng-repeat="usher in schedule.eleven.Ushers">{{usher}}</div>
 
           </div>
         </div>
@@ -210,7 +192,7 @@
         <div class="resume-item d-flex flex-column flex-md-row mb-5">
           <div class="resume-content mr-auto">
             <h3 class="mb-0">AV</h3>
-            <div>{{schedule.five.av}}</div>
+            <div>{{schedule.eleven.av}}</div>
           </div>
         </div>
 
