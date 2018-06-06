@@ -171,8 +171,8 @@
         <div class="resume-item d-flex flex-column flex-md-row mb-5" ng-repeat="ann in announcements">
           <div class="resume-content mr-auto">
             <h3 class="mb-0">{{ann.title}}</h3>
-            <div class="subheading mb-3">{{ann.info}}</div>
             <p>{{ann.details}}</p>
+            <p ng-show="ann.url"><a href="ann.url">{{ann.url}}</a></p>
           </div>
         </div>
 
