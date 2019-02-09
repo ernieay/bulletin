@@ -75,6 +75,7 @@
           <span class="text-primary">at 5</span>
         </h1>
         <div class="subheading mb-5">Gordon Library Meeting Room 1 · Sunday · 5pm </div>
+        <div class="subheading mb-5">{{date}}</div>
         <p class="mb-5">We'd like to warmly welcome you today to our service, especially if you are here for the first time. Our mission
           at EFCA is to build and equip each other to be passionate disciples of Jesus, so that we can impact the world for
           Him to the glory of God. We are glad that you are here!</p>
@@ -101,7 +102,7 @@
       <div class="my-auto">
         <h2 class="mb-5">Announcements</h2>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5" ng-repeat="ann in announcements">
+        <div class="resume-item d-flex flex-column flex-md-row mb-5" ng-repeat="ann in announcements | orderBy:'id'">
           <div class="resume-content mr-auto">
             <h3 class="mb-0">{{ann.title}}</h3>
             <p>{{ann.details}}</p>

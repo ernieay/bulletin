@@ -11,6 +11,7 @@ codenameApp.controller('BulletinController', function GameController($scope, $ht
         }
     ];
     $scope.schedule = {};
+    $scope.date = "";
     $scope.stats = {};
     $scope.new = {};
     $scope.labels = [
@@ -138,6 +139,14 @@ codenameApp.controller('BulletinController', function GameController($scope, $ht
         });
     }
 
+    $scope.setDate = function () {
+        var day = new Date();
+        while (day.getDay() != 7) day = new Date(day.valueOf()-86400000);
+
+        $scope.date = `Sunday ${day.getDate()} ${day.getMonth()}`;
+    }
+    
+    $scope.setDate();
     $scope.refresh();
 
 });
