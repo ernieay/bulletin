@@ -141,7 +141,7 @@ codenameApp.controller('BulletinController', function GameController($scope, $ht
 
     $scope.setDate = function () {
         var day = new Date();
-        while (day.getDay() != 6) day = new Date(day.valueOf()-86400000);
+        while (day.getDay() != 0) day = new Date(day.valueOf()-86400000);
 
         $scope.date = `Sunday ${day.getDate() + 1} ${new Intl.DateTimeFormat('en-US', {month: 'long'}).format(day)}`;
     }
