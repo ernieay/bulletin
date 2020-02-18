@@ -20,7 +20,7 @@ codenameApp.controller('BulletinController', function GameController($scope, $ht
     ]
     $scope.series = ['Target to date', 'Actual to date'];
     $scope.data = [[0,0], [0,0]];
-    $scope.question = {text : ""};
+    $scope.question = { text : "", name: undefined, contact: undefined };
     $scope.sent = false;
     $scope.mcQuestions = [];
 
