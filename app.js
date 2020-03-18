@@ -40,6 +40,7 @@ codenameApp.controller('BulletinController', function GameController($scope, $ht
             url: 'https://hx0wfex80e.execute-api.ap-southeast-2.amazonaws.com/prod/questions'
         }).then(function successCallback(response) {
             $scope.mcQuestions = response.data.body;
+            $scope.mcQuestions.sort(function(a,b){ return b.id - a.id })
         }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.
