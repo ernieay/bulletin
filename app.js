@@ -142,6 +142,20 @@ codenameApp.controller('BulletinController', function GameController($scope, $ht
         });
     }
 
+    $scope.sendResponse = function () {
+       
+        $http({
+            method: 'POST',
+            url: 'https://hx0wfex80e.execute-api.ap-southeast-2.amazonaws.com/prod/response',
+            data: $scope.response
+        }).then(function successCallback(response) {
+            $scope.sentResponse = true;
+        }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        });
+    }
+
     $scope.setDate = function () {
         var day = new Date();
         while (day.getDay() != 0) day = new Date(day.valueOf()-86400000);

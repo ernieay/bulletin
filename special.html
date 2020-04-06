@@ -73,7 +73,10 @@
         <p class="mb-5">We'd like to warmly welcome you today to our service, especially if you are here for the first time. Our mission
           at EFCA is to build and equip each other to be passionate disciples of Jesus, so that we can impact the world for
           Him to the glory of God. We are glad that you are here!</p>
-
+        <br>
+        <div>
+          <img src="img/online1.jpeg" style="max-width: 100%">
+        </div>
       </div>
     </section>
 
@@ -81,11 +84,32 @@
       <div class="my-auto">
         <h2 class="mb-5">Response Form</h2>
                 
-            <input class="col-8" type="text" placeholder="Name (Optional)" ng-model="response.name">
+            <input class="col-8" type="text" placeholder="Name" ng-model="response.name">
             <br><br>
-            <input class="col-8" type="text" placeholder="Email/phone (Optional)" ng-model="response.contact">
+            <input class="col-8" type="text" placeholder="Email/phone" ng-model="response.contact">
+            <br><br>            
+            <label>
+              <input type="radio" ng-model="response.response" value="interested">
+              I'm not a Christian but I'm interested in finding out more
+            </label>
+            <label>
+              <input type="radio" ng-model="response.response" value="new">
+              I decided to trust in Jesus as my Lord and Saviour for the first time today
+            </label>
+            <label>
+              <input type="radio" ng-model="response.response" value="rededicate">
+              I decided to rededicate my life to serving Jesus
+            </label>
+            <label>
+              <input type="radio" ng-model="response.response" value="christian">
+              I'm already a Christian
+            </label>
+            <label>
+              <input type="radio" ng-model="response.response" value="uninterested">
+              I'm not interested for the time being
+            </label>
             <br><br>
-            <textarea class="col-12" ng-hide="sent" cols="30" rows="5" ng-model="response.text" placeholder="Prayer points, questions or feedback"></textarea>
+            <textarea class="col-12" ng-hide="sent" cols="30" rows="5" ng-model="response.text" placeholder="Comments, questions or feedback"></textarea>
             <br><br>
           <p class="mb-5" ng-show="sentResponse">Thank you for attending our service today!</p>
           <div class="resume-date text-md-right">
