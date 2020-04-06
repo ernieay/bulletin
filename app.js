@@ -21,7 +21,7 @@ codenameApp.controller('BulletinController', function GameController($scope, $ht
     $scope.series = ['Target to date', 'Actual to date'];
     $scope.data = [[0,0], [0,0]];
     $scope.question = { text : "", name: undefined, contact: undefined };
-    $scope.response = { text : "", name: undefined, contact: undefined, response: undefined };
+    $scope.response = { text : "", name: undefined, contact: undefined, response: undefined, find: undefined };
     $scope.sent = false;
     $scope.sentResponse = false;
     $scope.mcQuestions = [];
