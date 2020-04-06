@@ -84,36 +84,36 @@
       <div class="my-auto">
         <h2 class="mb-5">Response Form</h2>
                 
-            <input class="col-8" type="text" placeholder="Name" ng-model="response.name">
+            <input class="col-8" ng-hide="sentResponse" type="text" placeholder="Name" ng-model="response.name">
             <br><br>
-            <input class="col-8" type="text" placeholder="Email/phone" ng-model="response.contact">
+            <input class="col-8" ng-hide="sentResponse" type="text" placeholder="Email/phone" ng-model="response.contact">
             <br><br>            
             <label>
-              <input type="radio" ng-model="response.response" value="interested">
+              <input type="radio" ng-hide="sentResponse" ng-model="response.response" value="interested">
               I'm not a Christian but I'm interested in finding out more
             </label>
             <br>
             <label>
-              <input type="radio" ng-model="response.response" value="new">
+              <input type="radio" ng-hide="sentResponse" ng-model="response.response" value="new">
               I decided to trust in Jesus as my Lord and Saviour for the first time today
             </label>
             <br>
             <label>
-              <input type="radio" ng-model="response.response" value="rededicate">
+              <input type="radio" ng-hide="sentResponse" ng-model="response.response" value="rededicate">
               I decided to rededicate my life to serving Jesus
             </label>
             <br>
             <label>
-              <input type="radio" ng-model="response.response" value="christian">
+              <input type="radio" ng-hide="sentResponse" ng-model="response.response" value="christian">
               I'm already a Christian
             </label>
             <br>
             <label>
-              <input type="radio" ng-model="response.response" value="uninterested">
+              <input type="radio" ng-hide="sentResponse" ng-model="response.response" value="uninterested">
               I'm not interested for the time being
             </label>
             <br><br>
-            <textarea class="col-12" ng-hide="sent" cols="30" rows="5" ng-model="response.text" placeholder="Comments, questions or feedback"></textarea>
+            <textarea class="col-12" ng-hide="sentResponse" cols="30" rows="5" ng-model="response.text" placeholder="Comments, questions or feedback"></textarea>
             <br><br>
           <p class="mb-5" ng-show="sentResponse">Thank you for attending our service today!</p>
           <div class="resume-date text-md-right">
@@ -217,9 +217,9 @@
       <div class="my-auto">
         <h2 class="mb-5">Contact Us</h2>
                 
-            <input class="col-8" type="text" placeholder="Name (Optional)" ng-model="question.name">
+            <input class="col-8" ng-hide="sent" type="text" placeholder="Name (Optional)" ng-model="question.name">
             <br><br>
-            <input class="col-8" type="text" placeholder="Email/phone (Optional)" ng-model="question.contact">
+            <input class="col-8" ng-hide="sent" type="text" placeholder="Email/phone (Optional)" ng-model="question.contact">
             <br><br>
             <textarea class="col-12" ng-hide="sent" cols="30" rows="5" ng-model="question.text" placeholder="Prayer points, questions or feedback"></textarea>
             <br><br>
