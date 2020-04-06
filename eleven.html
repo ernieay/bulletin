@@ -278,9 +278,9 @@
       <div class="my-auto">
         <h2 class="mb-5">Contact Us</h2>
                 
-            <input class="col-8" type="text" placeholder="Name (Optional)" ng-model="question.name">
+            <input class="col-8" ng-hide="sent" type="text" placeholder="Name (Optional)" ng-model="question.name">
             <br><br>
-            <input class="col-8" type="text" placeholder="Email/phone (Optional)" ng-model="question.contact">
+            <input class="col-8" ng-hide="sent" type="text" placeholder="Email/phone (Optional)" ng-model="question.contact">
             <br><br>
             <textarea class="col-12" ng-hide="sent" cols="30" rows="5" ng-model="question.text" placeholder="Prayer points, questions or feedback"></textarea>
             <br><br>
